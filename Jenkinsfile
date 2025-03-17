@@ -46,8 +46,29 @@
 
 // For Windowa 
 
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Install Dependencies') {
+//             steps {
+//                 bat 'npm install' // Use "bat" instead of "sh" for Windows
+//             }
+//         }
+//         stage('Build') {
+//             steps {
+//                 bat 'npm run build' // Adjust command for your project
+//             }
+//         }
+//     }
+// }
+
+
+
 pipeline {
     agent any
+    environment {
+        NODE_OPTIONS = "--openssl-legacy-provider"
+    }
     stages {
         stage('Install Dependencies') {
             steps {
@@ -61,9 +82,6 @@ pipeline {
         }
     }
 }
-
-
-
 
 
 
