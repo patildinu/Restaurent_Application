@@ -91,7 +91,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
-                // Add deployment steps here (e.g., AWS S3, Firebase, Nginx, etc.)
+                
             }
         }
     }
